@@ -18,7 +18,7 @@
 #' n3=8
 #' n4=15
 #'
-#' res <- OR_Ref(n1,n2,n3,n4,conf.int = FALSE,num.samples = 500)
+#' res <- OR_Ref(n1,n2,n3,n4,conf.int = FALSE,num.samples = 1000)
 OR_Ref=function(n1,n2,n3,n4,conf.int = TRUE,conf.level = 0.95,
                 post.sample = TRUE,sampling.depth=4,num.samples=1000){
 
