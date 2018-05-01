@@ -1,7 +1,7 @@
 Package: OBayes2by2Table
 Type: Package
 Title: Reference Analysis for the Odds ratio of a 2x2 Table
-Version: 0.1.0
+Version: 0.1.1
 Author: John Snyder
 Maintainer: John Snyder <me@johnsnyder.org>
 Description: Does Reference Analysis for the Odds ratio of a 2x2 Table

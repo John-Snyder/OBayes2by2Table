@@ -139,7 +139,7 @@ POST.theta_given_eta1=function(theta,eta1,n1,n2,n3,n4)
 
 Theta_ROU <-function(n1,n2,n3,n4,nsim=100,plots=0,ConnInfo)
 {
-  print(sprintf("Generating %s posterior samples from theta",nsim))
+  message(sprintf("Generating %s posterior samples from theta|data",nsim))
   ThetaSamples<-rep(NA,nsim)
 
     a.inf.theta<-0
@@ -185,6 +185,7 @@ Theta_ROU <-function(n1,n2,n3,n4,nsim=100,plots=0,ConnInfo)
       }
     }
   }
+  close(pb)
   return(ThetaSamples)
 }
 
@@ -192,8 +193,10 @@ Eta1_ROU <- function(theta.sim,n1,n2,n3,n4)
 {
   nsim <- length(theta.sim)
   eta1.S <- rep(NA,nsim)
-  print(sprintf("Generating %s posterior samples from eta1",nsim))
-  pb <- txtProgressBar(min = 0, max = nsim, style = 3)
+  message(sprintf("Generating %s posterior samples from eta1|theta,data",nsim))
+  #cat("\n")
+  pb <- txtProgressBar(min = 0, max = nsim,
+                       style = 3)
   for(i in 1:nsim)
   {
     #print(i)
@@ -228,9 +231,8 @@ Eta1_ROU <- function(theta.sim,n1,n2,n3,n4)
     #              i,eta1.opt.time,eta1.ROU.time))
     setTxtProgressBar(pb, i)
   }
-
-  return(eta1.S)
   close(pb)
+  return(eta1.S)
 }
 
 Eta3_sim <- function(theta.sim,eta1.sim,n1,n2,n3,n4)
@@ -238,7 +240,7 @@ Eta3_sim <- function(theta.sim,eta1.sim,n1,n2,n3,n4)
 
   nsim <- length(theta.sim)
   eta3.S <- rep(NA,nsim)
-  print(sprintf("Generating %s posterior samples from eta3",nsim))
+  message(sprintf("Generating %s posterior samples from eta3|theta,eta1,data",nsim))
   for(i in 1:nsim)
   {
     gamma.star <- rbeta(n = 1,shape1 = n2+n4+.5,shape2 = n1+n3)
@@ -254,7 +256,7 @@ Eta2_sim <- function(theta.sim,eta1.sim,eta3.sim,n1,n2,n3,n4)
 
   nsim <- length(theta.sim)
   eta2.S <- rep(NA,nsim)
-  print(sprintf("Generating %s posterior samples from eta2",nsim))
+  message(sprintf("Generating %s posterior samples from eta2|theta,eta1,eta3,data",nsim))
   for(i in 1:nsim)
   {
     eta2.S[i] <- rgamma(n = 1,
