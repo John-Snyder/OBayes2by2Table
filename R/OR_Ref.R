@@ -1,6 +1,6 @@
 #' Reference Analysis of the 2x2 table
 #'
-#' Perform Bayesian analysis on the 2x2 table using a reference prior
+#' Performs Bayesian analysis on the odds ratio of a 2x2 contingency table
 #'
 #' @param n1 Upper left element of the table
 #' @param n2 Upper right element of the table
@@ -11,6 +11,10 @@
 #' @param post.sample Should Posterior sampling be conducted?
 #' @param sampling.depth Depth of sampling.  1 for theta only, 2 to add eta1, 3 to add eta3, 4 to add eta2
 #' @param num.samples Number of Posterior Samples
+#' 
+#' @return 
+#' \item{CI}{The Credible interval and median}
+#' \item{Theta.Samples}{Posterior Samples of the odds ratio theta}
 #' @export
 #' @examples
 #' n1=5
