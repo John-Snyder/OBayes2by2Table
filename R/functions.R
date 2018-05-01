@@ -1,9 +1,3 @@
-library(hypergeo)
-#library(fmsb)
-#library(Rmpfr);PrecBits<-237
-#library(HI)
-#library(utils)
-
 H.theta <- function(theta)
 {
   #if(theta>1e15){return(log(theta)/sqrt(theta))}
