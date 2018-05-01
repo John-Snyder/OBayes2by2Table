@@ -8,8 +8,8 @@ H.theta <- function(theta)
 {
   #if(theta>1e15){return(log(theta)/sqrt(theta))}
   ifelse(theta<1,
-         (pi*Re(hypergeo(1/2,1/2,1,1-theta,maxiter=1e6))),
-         (pi/sqrt(theta)*Re(hypergeo(1/2,1/2,1,(theta-1)/theta,
+         (pi*Re(hypergeo::hypergeo(1/2,1/2,1,1-theta,maxiter=1e6))),
+         (pi/sqrt(theta)*Re(hypergeo::hypergeo(1/2,1/2,1,(theta-1)/theta,
                                      tol=1e-10 , maxiter=1e6))))
 }
 
