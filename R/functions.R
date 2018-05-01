@@ -1,8 +1,8 @@
 library(hypergeo)
-library(fmsb)
-library(Rmpfr);PrecBits<-237
-library(HI)
-library(utils)
+#library(fmsb)
+#library(Rmpfr);PrecBits<-237
+#library(HI)
+#library(utils)
 
 H.theta <- function(theta)
 {
