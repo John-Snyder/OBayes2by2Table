@@ -1,13 +1,13 @@
 Package: OBayes2by2Table
 Type: Package
 Title: Reference Analysis for the Odds ratio of a 2x2 Table
-Version: 0.1.1
+Version: 0.2.0
 Author: John Snyder
 Maintainer: John Snyder <me@johnsnyder.org>
 Description: Does Reference Analysis for the Odds ratio of a 2x2 Table
 Imports: hypergeo
 Depends: R (>= 3.1.0)
-License: MIT
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1

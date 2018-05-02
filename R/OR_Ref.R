@@ -35,7 +35,7 @@
 #'  negative/positive outcomes in the control/treatment group.  \eqn{\eta_2} represents
 #'  the total average number of negative/positive outcomes, and is a parameter that is
 #'  related to the "scale" of the table.  Finally, \eqn{\eta_3} represents the relative
-#'  risk of a positive outcome in the control group.
+#'  risk of a positive outcome in the control group. 
 #' @return 
 #' \item{CI}{The Credible interval and median}
 #' \item{Theta.Samples}{If \code{post.sample = TRUE}, the posterior Samples of the odds ratio theta}
@@ -98,8 +98,11 @@
 #' res <- OR_Ref(Convictions,conf.int = FALSE,num.samples = 5000)
 #' quantile(res$Theta.Samples,c(.025,.5,.975))
 #' 
-OR_Ref=function(x,conf.int = TRUE,conf.level = 0.95,
-                post.sample = TRUE,sampling.depth=1,num.samples=1000){
+OR_Ref=function(x,conf.int = TRUE,
+                conf.level = 0.95,
+                post.sample = TRUE,
+                sampling.depth=1,
+                num.samples=1000){
 
   n1 <- x[1,1]
   n2 <- x[1,2]
