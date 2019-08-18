@@ -26,7 +26,18 @@ Pi.R.thetaeta1 = function(theta,eta1)
   Dist <- 
   (1/(H.theta(theta))*1/sqrt(eta1*(1-eta1)*(theta*(1-eta1)+eta1)))*
   ((1/3.585) * (1/theta)*exp((1/2)*G.theta(theta)/H.theta(theta)))
+  return(Dist)
 }
+
+Pi.R.logtheta.eta1 = function(xi,eta1)
+{
+  theta = exp(xi)
+  Dist <- 
+    (1/(H.theta(theta))*1/sqrt(eta1*(1-eta1)*(theta*(1-eta1)+eta1)))* #pi(eta1|theta)
+    theta*((1/3.585) * (1/theta)*exp((1/2)*G.theta(theta)/H.theta(theta)))  #pi(theta)
+  return(Dist)
+}
+
 
 pi.R.theta=function(theta)
 {
