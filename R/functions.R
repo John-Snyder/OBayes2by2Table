@@ -21,6 +21,13 @@ G.theta <- function(theta)
   },lower = 0,upper = 1,subdivisions = 1e6,stop.on.error=FALSE)$value
 }
 
+Pi.R.thetaeta1 = function(theta,eta1)
+{
+  Dist <- 
+  (1/(H.theta(theta))*1/sqrt(eta1*(1-eta1)*(theta*(1-eta1)+eta1)))*
+  ((1/3.585) * (1/theta)*exp((1/2)*G.theta(theta)/H.theta(theta)))
+}
+
 pi.R.theta=function(theta)
 {
   (1/theta)*exp((1/2)*G.theta(theta)/H.theta(theta))

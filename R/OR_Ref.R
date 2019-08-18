@@ -137,7 +137,7 @@ OR_Ref=function(x,conf.int = TRUE,
                   approx.point.high=ConnInfo[3],ConnectRatio.High=ConnInfo[4],
                   NormalizingConstant=NormConst)$root
    cat("2.5% quantile finished","\n")
-   if(1<0){
+   if(1>0){
      MED <- uniroot(QuantileDiff,
                    lower=Quantiles[2],
                    upper=Quantiles[4],
@@ -145,6 +145,7 @@ OR_Ref=function(x,conf.int = TRUE,
                    approx.point.low=ConnInfo[1],ConnectRatio.Low=ConnInfo[2],
                    approx.point.high=ConnInfo[3],ConnectRatio.High=ConnInfo[4],
                    NormalizingConstant=NormConst)$root
+     cat("50% quantile finished","\n")
    }
 
     UB <- uniroot(QuantileDiff,
@@ -155,7 +156,7 @@ OR_Ref=function(x,conf.int = TRUE,
                   approx.point.high=ConnInfo[3],ConnectRatio.High=ConnInfo[4],
                   NormalizingConstant=NormConst)$root
     cat("97.5% quantile finished","\n")
-    Final.Results$CI <- c(LB,UB)
+    Final.Results$CI <- c(LB,MED,UB)
   }
 
   if(post.sample)
